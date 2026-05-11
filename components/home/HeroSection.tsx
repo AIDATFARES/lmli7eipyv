@@ -52,40 +52,28 @@ export default function HeroSection() {
 
           {/* LEFT SIDE CONTENT */}
           <div className="text-center lg:text-left space-y-8 flex flex-col items-center lg:items-start w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+            <div
               className="inline-flex items-center space-x-2 bg-indigo-950/40 border border-indigo-500/20 rounded-full px-4 py-1.5 backdrop-blur-md"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
               <span className="text-[10px] font-bold text-slate-300 tracking-widest uppercase">Best IPTV SERVICE FOR SPORTS & ENTERTAINMENT</span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            <h1
               className="text-5xl md:text-6xl lg:text-7xl font-bold font-poppins tracking-tight leading-[1.1]"
             >
               <span className="text-white block">THE WORLD CUP</span>
               <span className="bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-400 text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(129,140,248,0.3)] block mt-1">ON YOUR SCREEN</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+            <p
               className="text-base md:text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
               Watch every <strong className="text-slate-200 font-semibold">World Cup 2026 match</strong> live in HD & 4K. The most reliable IPTV with <strong className="text-slate-200 font-semibold">50,000+ channels</strong>, 200,000+ movies & series — on every device, worldwide.
-            </motion.p>
+            </p>
 
             {/* COUNTDOWN TIMER */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+            <div
               className="pt-4 flex flex-col items-center lg:items-start w-full"
             >
               <div className="flex items-center justify-center lg:justify-start space-x-4 mb-5 w-full">
@@ -120,13 +108,10 @@ export default function HeroSection() {
               <p className="text-[11px] font-bold text-indigo-400 mt-5 tracking-[0.05em] text-center lg:text-left">
                 <span className="text-slate-600 font-medium">Opening match —</span> June 11, 2026 • USA vs Mexico
               </p>
-            </motion.div>
+            </div>
 
             {/* STATS ROW */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+            <div
               className="flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4 pt-6 border-t border-indigo-500/10 w-full"
             >
               <div className="flex items-center space-x-3 bg-[#0c0f1c]/80 border border-indigo-500/20 rounded-xl px-4 py-3">
@@ -150,15 +135,12 @@ export default function HeroSection() {
                   <span className="text-[9px] text-slate-400 font-medium tracking-wide">Uptime</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* RIGHT SIDE CONTENT */}
           <div className="flex flex-col lg:items-end w-full">
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            <div
               className="relative w-full max-w-[600px] mb-8"
             >
               {/* Floating Labels */}
@@ -244,10 +226,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* BUTTONS ROW OVER RIGH SIDE (MATCHING IMAGE) */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+            <div
               className="flex flex-col w-full max-w-[600px]"
             >
               <div className="flex flex-col sm:flex-row gap-4 mb-8 pt-4">
@@ -274,7 +253,7 @@ export default function HeroSection() {
                 <span className="flex items-center"><Zap className="w-3.5 h-3.5 mr-1.5 text-orange-400" /> Instant Setup</span>
                 <span className="flex items-center"><Globe className="w-3.5 h-3.5 mr-1.5 text-cyan-400" /> Worldwide</span>
               </div>
-            </motion.div>
+            </div>
           </div>
 
         </div>
