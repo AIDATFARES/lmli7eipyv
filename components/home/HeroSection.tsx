@@ -223,7 +223,7 @@ export default function HeroSection() {
                   <div className="w-3/4 h-[1px] bg-indigo-500/50 mt-auto mb-1 blur-[1px]"></div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* BUTTONS ROW OVER RIGH SIDE (MATCHING IMAGE) */}
             <div
