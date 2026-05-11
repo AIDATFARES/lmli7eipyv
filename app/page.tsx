@@ -1,14 +1,17 @@
+import dynamic from 'next/dynamic';
 import AnimatedBackground from "@/components/ui/AnimatedBackground";
 import HeroSection from "@/components/home/HeroSection";
-import ChannelCategories from "@/components/home/ChannelCategories";
-import TopFeatureBar from "@/components/home/TopFeatureBar";
-import FeaturesSection from "@/components/home/FeaturesSection";
-import HowItWorksSection from "@/components/home/HowItWorksSection";
-import PricingSection from "@/components/home/PricingSection";
-import GlobalCoverageSection from "@/components/home/GlobalCoverageSection";
-import DeviceSupport from "@/components/home/DeviceSupport";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
-import FAQ from "@/components/home/FAQ";
+
+// Dynamically import below-the-fold components to reduce initial JS bundle size
+const ChannelCategories = dynamic(() => import("@/components/home/ChannelCategories"), { ssr: true });
+const TopFeatureBar = dynamic(() => import("@/components/home/TopFeatureBar"), { ssr: true });
+const FeaturesSection = dynamic(() => import("@/components/home/FeaturesSection"), { ssr: true });
+const HowItWorksSection = dynamic(() => import("@/components/home/HowItWorksSection"), { ssr: true });
+const PricingSection = dynamic(() => import("@/components/home/PricingSection"), { ssr: true });
+const GlobalCoverageSection = dynamic(() => import("@/components/home/GlobalCoverageSection"), { ssr: true });
+const DeviceSupport = dynamic(() => import("@/components/home/DeviceSupport"), { ssr: true });
+const TestimonialsSection = dynamic(() => import("@/components/home/TestimonialsSection"), { ssr: true });
+const FAQ = dynamic(() => import("@/components/home/FAQ"), { ssr: true });
 
 export default function Home() {
   return (

@@ -150,6 +150,8 @@ export default function HowItWorksSection() {
               <img 
                 src="/iptv-world-cup-hero.webp" 
                 alt="World Cup Live Stream" 
+                loading="lazy"
+                width={800} height={450}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#060814] via-[#060814]/40 to-transparent pointer-events-none"></div>

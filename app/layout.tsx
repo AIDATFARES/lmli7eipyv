@@ -4,8 +4,10 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import dynamic from "next/dynamic";
 import { Toaster } from "sonner";
+
+const WhatsAppButton = dynamic(() => import("@/components/ui/WhatsAppButton"), { ssr: false });
 
 const inter = Inter({ subsets: ["latin"], display: "optional", variable: "--font-inter" });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "optional", variable: "--font-poppins" });
