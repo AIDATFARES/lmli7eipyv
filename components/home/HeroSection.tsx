@@ -97,7 +97,7 @@ export default function HeroSection() {
                           {item.value.toString().padStart(2, '0')}
                         </span>
                       </div>
-                      <span className="text-[9px] text-slate-500 font-bold tracking-widest mt-2 sm:mt-3 uppercase">{item.label}</span>
+                      <span className="text-[9px] text-slate-400 font-bold tracking-widest mt-2 sm:mt-3 uppercase">{item.label}</span>
                     </div>
                     {idx < arr.length - 1 && (
                       <div className="text-lg sm:text-2xl font-bold text-indigo-500/40 mb-5 sm:mb-6">:</div>
@@ -197,7 +197,7 @@ export default function HeroSection() {
 
                   {/* Dynamic Stadium Image */}
                   <Image
-                    src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200"
+                    src="/iptv-world-cup-hero.webp"
                     alt="World Cup Stadium"
                     fill
                     priority
@@ -233,6 +233,7 @@ export default function HeroSection() {
                 <a 
                   href="https://wa.me/213554246175?text=Hello,%20I%20would%20like%20to%20request%20a%20free%20trial%20for%20the%20World%20Cup%20IPTV%20service."
                   target="_blank"
+                  aria-label="Get Free Trial via WhatsApp"
                   className="group relative flex-1 py-4 px-8 rounded-full text-sm font-bold text-white bg-gradient-to-r from-emerald-500 to-green-600 hover:opacity-100 shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:shadow-[0_0_50px_rgba(16,185,129,0.8)] hover:-translate-y-1 transition-all duration-300 overflow-hidden flex items-center justify-center tracking-wide"
                 >
                   <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -240,7 +241,11 @@ export default function HeroSection() {
                   <Trophy className="w-4 h-4 mr-2 group-hover:scale-125 group-hover:text-yellow-200 transition-all duration-300 z-10" />
                   <span className="z-10 group-hover:scale-105 transition-transform duration-300">GET FREE TRIAL</span>
                 </a>
-                <Link href="#pricing" className="group relative flex-1 py-4 px-8 rounded-full text-sm font-bold text-white bg-[#111827] hover:bg-[#1f2937] border border-white/10 hover:border-white/20 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.05)] overflow-hidden flex items-center justify-center tracking-wide">
+                <Link 
+                  href="#pricing" 
+                  aria-label="View Pricing Plans"
+                  className="group relative flex-1 py-4 px-8 rounded-full text-sm font-bold text-white bg-[#111827] hover:bg-[#1f2937] border border-white/10 hover:border-white/20 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.05)] overflow-hidden flex items-center justify-center tracking-wide"
+                >
                   <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <span className="z-10 transition-transform duration-300 group-hover:scale-105">VIEW PLANS</span>
                 </Link>
