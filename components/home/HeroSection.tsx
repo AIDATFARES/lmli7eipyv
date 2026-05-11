@@ -36,12 +36,12 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen pt-32 lg:pt-40 pb-24 overflow-hidden flex items-center bg-[#060814]">
-      {/* Decorative Lights - Significantly optimized for mobile GPU */}
-      <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] bg-indigo-600/20 blur-3xl md:blur-[100px] rounded-full z-0 pointer-events-none transform-gpu"></div>
-      <div className="absolute top-[40%] right-[10%] w-[400px] h-[400px] bg-blue-600/10 blur-3xl md:blur-[120px] rounded-full z-0 pointer-events-none transform-gpu hidden sm:block"></div>
+      {/* Decorative Lights - ZERO GPU COST with radial gradients */}
+      <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(79,70,229,0.15)_0%,transparent_60%)] rounded-full z-0 pointer-events-none"></div>
+      <div className="absolute top-[40%] right-[10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(37,99,235,0.1)_0%,transparent_60%)] rounded-full z-0 pointer-events-none hidden sm:block"></div>
 
       {/* Center Light Beams */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[600px] bg-gradient-to-b from-indigo-500/10 via-purple-500/5 to-transparent pointer-events-none z-0 blur-xl transform-gpu hidden sm:block" style={{ clipPath: 'polygon(30% 0, 70% 0, 100% 100%, 0% 100%)' }}></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[600px] bg-gradient-to-b from-indigo-500/10 via-purple-500/5 to-transparent pointer-events-none z-0 hidden sm:block" style={{ clipPath: 'polygon(30% 0, 70% 0, 100% 100%, 0% 100%)' }}></div>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[800px] overflow-hidden pointer-events-none z-0 hidden md:block opacity-40">
         <div className="absolute top-[-5%] left-[48%] -translate-x-1/2 w-[1px] h-[1000px] bg-gradient-to-b from-indigo-400 to-transparent rotate-[22deg] origin-top"></div>
         <div className="absolute top-[-5%] left-[52%] -translate-x-1/2 w-[1px] h-[1000px] bg-gradient-to-b from-indigo-400 to-transparent -rotate-[22deg] origin-top"></div>
