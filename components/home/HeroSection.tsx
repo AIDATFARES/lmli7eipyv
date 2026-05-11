@@ -36,15 +36,15 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen pt-32 lg:pt-40 pb-24 overflow-hidden flex items-center bg-[#060814]">
-      {/* Decorative Lights */}
-      <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] bg-indigo-600/20 blur-[120px] rounded-full z-0 pointer-events-none"></div>
-      <div className="absolute top-[40%] right-[10%] w-[400px] h-[400px] bg-blue-600/10 blur-[150px] rounded-full z-0 pointer-events-none"></div>
+      {/* Decorative Lights - Significantly optimized for mobile GPU */}
+      <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] bg-indigo-600/20 blur-3xl md:blur-[100px] rounded-full z-0 pointer-events-none transform-gpu"></div>
+      <div className="absolute top-[40%] right-[10%] w-[400px] h-[400px] bg-blue-600/10 blur-3xl md:blur-[120px] rounded-full z-0 pointer-events-none transform-gpu hidden sm:block"></div>
 
       {/* Center Light Beams */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[600px] bg-gradient-to-b from-indigo-500/10 via-purple-500/5 to-transparent pointer-events-none z-0 blur-xl" style={{ clipPath: 'polygon(30% 0, 70% 0, 100% 100%, 0% 100%)' }}></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[800px] overflow-hidden pointer-events-none z-0 hidden sm:block opacity-40">
-        <div className="absolute top-[-5%] left-[48%] -translate-x-1/2 w-[1px] h-[1000px] bg-gradient-to-b from-indigo-400 to-transparent rotate-[22deg] origin-top blur-[1px]"></div>
-        <div className="absolute top-[-5%] left-[52%] -translate-x-1/2 w-[1px] h-[1000px] bg-gradient-to-b from-indigo-400 to-transparent -rotate-[22deg] origin-top blur-[1px]"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[600px] bg-gradient-to-b from-indigo-500/10 via-purple-500/5 to-transparent pointer-events-none z-0 blur-xl transform-gpu hidden sm:block" style={{ clipPath: 'polygon(30% 0, 70% 0, 100% 100%, 0% 100%)' }}></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[800px] overflow-hidden pointer-events-none z-0 hidden md:block opacity-40">
+        <div className="absolute top-[-5%] left-[48%] -translate-x-1/2 w-[1px] h-[1000px] bg-gradient-to-b from-indigo-400 to-transparent rotate-[22deg] origin-top"></div>
+        <div className="absolute top-[-5%] left-[52%] -translate-x-1/2 w-[1px] h-[1000px] bg-gradient-to-b from-indigo-400 to-transparent -rotate-[22deg] origin-top"></div>
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -215,11 +215,12 @@ export default function HeroSection() {
 
                   {/* Dynamic Stadium Image */}
                   <Image
-                    src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&q=80&w=1200"
+                    src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200"
                     alt="World Cup Stadium"
                     fill
                     priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    quality={70}
+                    sizes="(max-width: 768px) 100vw, 600px"
                     className="object-cover opacity-90 transition-transform duration-700 hover:scale-105"
                   />
 
