@@ -7,7 +7,7 @@ import NoiseOverlay from "@/components/ui/NoiseOverlay";
 import dynamic from "next/dynamic";
 import { Toaster } from "sonner";
 
-const WhatsAppButton = dynamic(() => import("@/components/ui/WhatsAppButton"), { ssr: false });
+const WhatsAppButton = dynamic(() => import("@/components/ui/WhatsAppButton"));
 
 const inter = Inter({ subsets: ["latin"], display: "optional", variable: "--font-inter" });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "optional", variable: "--font-poppins" });
