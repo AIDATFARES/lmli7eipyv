@@ -197,12 +197,11 @@ export default function HeroSection() {
 
                   {/* Dynamic Stadium Image */}
                   <Image
-                    src="/iptv-world-cup-hero.webp"
+                    src="/iptv-hero-opt.webp"
                     alt="World Cup Stadium"
                     fill
                     priority
-                    quality={70}
-                    sizes="(max-width: 768px) 100vw, 600px"
+                    unoptimized
                     className="object-cover opacity-90 transition-transform duration-700 hover:scale-105"
                   />
 

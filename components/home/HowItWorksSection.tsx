@@ -148,7 +148,7 @@ export default function HowItWorksSection() {
               className="relative w-full aspect-[16/10] sm:aspect-video rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.6)] border border-indigo-500/20 group"
             >
               <img 
-                src="/iptv-world-cup-hero.webp" 
+                src="/iptv-hero-opt.webp" 
                 alt="World Cup Live Stream" 
                 loading="lazy"
                 width={800} height={450}
