@@ -63,7 +63,7 @@ export default function HeroSection() {
               className="text-5xl md:text-6xl lg:text-7xl font-bold font-poppins tracking-tight leading-[1.1]"
             >
               <span className="text-white block">THE WORLD CUP</span>
-              <span className="bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-400 text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(129,140,248,0.3)] block mt-1">ON YOUR SCREEN</span>
+              <span className="bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-400 text-transparent bg-clip-text block mt-1">ON YOUR SCREEN</span>
             </h1>
 
             <p
@@ -201,7 +201,6 @@ export default function HeroSection() {
                     alt="World Cup Stadium"
                     fill
                     priority
-                    unoptimized
                     quality={70}
                     sizes="(max-width: 768px) 100vw, 600px"
                     className="object-cover opacity-90 transition-transform duration-700 hover:scale-105"
