@@ -97,6 +97,7 @@ export default function ChannelCategories() {
                 <img 
                   src={cat.image} 
                   alt={cat.title} 
+                  loading="lazy"
                   className="w-full h-full object-cover opacity-30 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:opacity-50" 
                 />
               </div>
