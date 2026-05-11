@@ -92,6 +92,8 @@ export default function GlobalCoverageSection() {
               <img 
                 src={`https://flagcdn.com/w40/${country.code}.png`} 
                 alt={country.name} 
+                loading="lazy"
+                width={16} height={12}
                 className="w-4 h-3 rounded-[2px] opacity-70"
               />
               <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest whitespace-nowrap">
@@ -104,7 +106,7 @@ export default function GlobalCoverageSection() {
       </div>
 
       {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-indigo-900/10 blur-[150px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-[radial-gradient(ellipse,rgba(79,70,229,0.08)_0%,transparent_70%)] rounded-full pointer-events-none"></div>
 
       <div className="container mx-auto px-6 max-w-5xl relative z-10 mb-16">
         
@@ -185,6 +187,8 @@ export default function GlobalCoverageSection() {
                 <img 
                   src={`https://flagcdn.com/w40/${country.code}.png`} 
                   alt={country.name} 
+                  loading="lazy"
+                  width={20} height={15}
                   className="w-5 h-auto rounded-[2px] opacity-90 group-hover:opacity-100 transition-opacity"
                 />
                 <span className="text-[11px] font-semibold text-slate-300 group-hover:text-white truncate">
@@ -225,6 +229,8 @@ export default function GlobalCoverageSection() {
               <img 
                 src={`https://flagcdn.com/w40/${country.code}.png`} 
                 alt={country.name} 
+                loading="lazy"
+                width={16} height={12}
                 className="w-4 h-3 rounded-[2px] opacity-70"
               />
               <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest whitespace-nowrap">

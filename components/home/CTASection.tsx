@@ -20,8 +20,8 @@ export default function CTASection() {
         >
           {/* Neon inner border glow and background gradients */}
           <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 via-transparent to-blue-900/10 pointer-events-none"></div>
-          <div className="absolute -left-32 -bottom-32 w-96 h-96 bg-purple-600/20 blur-[100px] pointer-events-none rounded-full"></div>
-          <div className="absolute -right-32 -top-32 w-96 h-96 bg-blue-600/20 blur-[100px] pointer-events-none rounded-full"></div>
+          <div className="absolute -left-32 -bottom-32 w-96 h-96 bg-[radial-gradient(circle,rgba(147,51,234,0.15)_0%,transparent_60%)] pointer-events-none rounded-full"></div>
+          <div className="absolute -right-32 -top-32 w-96 h-96 bg-[radial-gradient(circle,rgba(37,99,235,0.15)_0%,transparent_60%)] pointer-events-none rounded-full"></div>
 
           {/* LEFT SIDE: Typography */}
           <div className="relative z-10 flex-1 max-w-xl">
@@ -46,8 +46,10 @@ export default function CTASection() {
             {/* Added Image with Free Plan Sticker */}
             <div className="relative w-full mb-8 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(147,51,234,0.3)] group border border-white/10">
               <img 
-                src="/iptv-world-cup-hero.webp" 
+                src="/iptv-hero-opt.webp" 
                 alt="World Cup Access" 
+                loading="lazy"
+                width={640} height={360}
                 className="w-full h-auto aspect-video object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 via-transparent to-transparent pointer-events-none"></div>
