@@ -10,17 +10,27 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-poppins" });
 
 export const metadata: Metadata = {
-  title: "NovaIPTV | Premium Futuristic Streaming",
-  description: "The ultimate 4K Ultra HD streaming platform providing 20,000+ live channels, zero buffering, and cinematic VOD libraries.",
+  metadataBase: new URL('https://worldcupiptv.us'),
+  title: "IPTV WorldCup | Premium 4K IPTV Subscription 2026",
+  description: "Watch all 104 World Cup 2026 matches live in 4K. 50,000+ channels, 200,000+ movies & series. Premium IPTV service for Firestick, Smart TV, and Apple TV.",
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: "NovaIPTV | Premium Futuristic Streaming",
-    description: "The ultimate 4K Ultra HD streaming platform providing 20,000+ live channels, zero buffering, and cinematic VOD libraries.",
-    url: "https://novaiptv.com",
-    siteName: "NovaIPTV",
-    images: [{ url: "https://novaiptv.com/og.jpg", width: 1200, height: 630 }],
+    title: "IPTV WorldCup | Premium 4K IPTV Subscription 2026",
+    description: "Watch all 104 World Cup 2026 matches live in 4K. 50,000+ channels, 200,000+ movies & series.",
+    url: "https://worldcupiptv.us",
+    siteName: "IPTV WorldCup",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: "IPTV WorldCup | Premium 4K IPTV Subscription 2026",
+    description: "Watch all 104 World Cup 2026 matches live in 4K. 50,000+ channels, 200,000+ movies & series.",
+    images: ['/og-image.jpg'],
+  }
 };
 
 export default function RootLayout({
