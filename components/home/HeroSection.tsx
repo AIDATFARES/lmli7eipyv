@@ -1,5 +1,6 @@
 "use client"
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Monitor, Film, Shield, Trophy, Globe, Zap, Target, MessageSquare, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState, useEffect, Fragment } from 'react';
@@ -213,10 +214,13 @@ export default function HeroSection() {
                   </div>
 
                   {/* Dynamic Stadium Image */}
-                  <img
+                  <Image
                     src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&q=80&w=1200"
                     alt="World Cup Stadium"
-                    className="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-105"
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover opacity-90 transition-transform duration-700 hover:scale-105"
                   />
 
                   {/* Overlay Vignette */}

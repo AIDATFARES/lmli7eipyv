@@ -24,7 +24,7 @@ export default function Navbar() {
       {/* Announcement Bar */}
       <AnimatePresence>
         {showAnnouncement && (
-          <motion.div 
+          <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -38,14 +38,14 @@ export default function Navbar() {
                 <span className="mr-1 text-[10px]">🎯</span> GET EARLY ACCESS
               </Link>
             </div>
-            
+
             {/* Mobile simplified text */}
             <Link href="/pricing" className="sm:hidden text-indigo-400 font-medium ml-2 shrink-0">
               Get Access
             </Link>
 
-            <button 
-              onClick={() => setShowAnnouncement(false)} 
+            <button
+              onClick={() => setShowAnnouncement(false)}
               className="absolute right-4 text-slate-500 hover:text-white transition-colors"
             >
               <X size={14} />
@@ -57,13 +57,13 @@ export default function Navbar() {
       {/* Main Navbar */}
       <div className={cn("container mx-auto px-6 max-w-7xl transition-all duration-300", scrolled ? "py-4" : "py-6")}>
         <div className="flex items-center justify-between">
-          
+
           <Link href="/" className="flex items-center space-x-4 group">
             {/* Logo Icon */}
             <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center shadow-[0_0_15px_rgba(147,51,234,0.3)] group-hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all shrink-0">
               <Tv className="text-white w-6 h-6" strokeWidth={2} />
             </div>
-            
+
             {/* Logo Text Block */}
             <div className="flex flex-col">
               <div className="flex items-center">
@@ -111,7 +111,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
