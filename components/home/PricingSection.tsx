@@ -13,7 +13,7 @@ export default function PricingSection() {
     {
       id: "3-months",
       name: "3 MONTHS",
-      basePrice: 45,
+      basePrice: 35,
       months: 3,
       popular: false,
       saveTag: null,
@@ -21,35 +21,30 @@ export default function PricingSection() {
       highlightSub: "50K+ channels & VODs",
     },
     {
-      id: "6-months",
-      name: "6 MONTHS",
-      basePrice: 65,
-      months: 6,
-      popular: true,
-      saveTag: "SAVE 28%",
-      highlightTag: "+ Best Value for World Cup",
-      highlightSub: "Full season + beyond",
-    },
-    {
       id: "1-year",
       name: "1 YEAR",
-      basePrice: 90,
+      basePrice: 69,
       months: 12,
-      popular: false,
+      popular: true,
       saveTag: "SAVE 50%",
       highlightTag: "+ Maximum Savings",
       highlightSub: "Best price per month",
+    },
+    {
+      id: "6-months",
+      name: "6 MONTHS",
+      basePrice: 49,
+      months: 6,
+      popular: false,
+      saveTag: "SAVE 30%",
+      highlightTag: "+ Best Value for World Cup",
+      highlightSub: "Full season + beyond",
     }
   ];
 
   // Utility to calculate dynamic price based on devices
   const getPrice = (basePrice: number) => {
-    let multiplier = 1;
-    if (devices === 2) multiplier = 1.6;
-    if (devices === 3) multiplier = 2.1;
-    if (devices === 4) multiplier = 2.6;
-    if (devices === 5) multiplier = 3.0;
-    return Math.floor(basePrice * multiplier);
+    return basePrice * devices;
   };
 
   const getMonthlyPrice = (totalPrice: number, months: number) => {
@@ -174,7 +169,7 @@ export default function PricingSection() {
                 <div className="flex justify-between items-start mb-6 h-8">
                   {plan.popular ? (
                     <div className="bg-purple-600 text-white px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(147,51,234,0.5)] flex items-center">
-                      <Zap className="w-3 h-3 mr-1" fill="currentColor" /> MOST POPULAR
+                      <Zap className="w-3 h-3 mr-1" fill="currentColor" /> MOST REQUESTED
                     </div>
                   ) : (
                     <div className="text-[10px] font-bold tracking-widest text-slate-500">{plan.name}</div>

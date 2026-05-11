@@ -246,12 +246,16 @@ export default function HeroSection() {
               className="flex flex-col w-full max-w-[600px]"
             >
               <div className="flex flex-col sm:flex-row gap-4 mb-8 pt-4">
-                <button className="group relative flex-1 py-4 px-8 rounded-full text-sm font-bold text-white bg-gradient-to-r from-emerald-500 to-green-600 hover:opacity-100 shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:shadow-[0_0_50px_rgba(16,185,129,0.8)] hover:-translate-y-1 transition-all duration-300 overflow-hidden flex items-center justify-center tracking-wide">
+                <a 
+                  href="https://wa.me/213554246175?text=Hello,%20I%20would%20like%20to%20request%20a%20free%20trial%20for%20the%20World%20Cup%20IPTV%20service."
+                  target="_blank"
+                  className="group relative flex-1 py-4 px-8 rounded-full text-sm font-bold text-white bg-gradient-to-r from-emerald-500 to-green-600 hover:opacity-100 shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:shadow-[0_0_50px_rgba(16,185,129,0.8)] hover:-translate-y-1 transition-all duration-300 overflow-hidden flex items-center justify-center tracking-wide"
+                >
                   <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
                   <Trophy className="w-4 h-4 mr-2 group-hover:scale-125 group-hover:text-yellow-200 transition-all duration-300 z-10" />
                   <span className="z-10 group-hover:scale-105 transition-transform duration-300">GET FREE TRIAL</span>
-                </button>
+                </a>
                 <Link href="#pricing" className="group relative flex-1 py-4 px-8 rounded-full text-sm font-bold text-white bg-[#111827] hover:bg-[#1f2937] border border-white/10 hover:border-white/20 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.05)] overflow-hidden flex items-center justify-center tracking-wide">
                   <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <span className="z-10 transition-transform duration-300 group-hover:scale-105">VIEW PLANS</span>
