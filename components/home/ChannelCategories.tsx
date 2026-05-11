@@ -7,7 +7,7 @@ export default function ChannelCategories() {
     {
       id: "sports",
       title: "Sports",
-      image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=60&w=320",
       color: "from-blue-600/80 via-blue-900/40 to-[#0c0f1c]",
       borderGlow: "group-hover:border-blue-500/50 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]",
       isPrimary: true
@@ -15,7 +15,7 @@ export default function ChannelCategories() {
     {
       id: "movies",
       title: "Movies",
-      image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=60&w=320",
       color: "from-purple-600/60 via-purple-900/40 to-[#0c0f1c]",
       borderGlow: "group-hover:border-purple-500/40 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]",
       isPrimary: false
@@ -23,7 +23,7 @@ export default function ChannelCategories() {
     {
       id: "news",
       title: "News",
-      image: "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=60&w=320",
       color: "from-red-600/60 via-red-900/40 to-[#0c0f1c]",
       borderGlow: "group-hover:border-red-500/40 group-hover:shadow-[0_0_20px_rgba(239,68,68,0.2)]",
       isPrimary: false
@@ -31,7 +31,7 @@ export default function ChannelCategories() {
     {
       id: "kids",
       title: "Kids",
-      image: "https://images.unsplash.com/photo-1566004100631-35d015d6a491?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1566004100631-35d015d6a491?auto=format&fit=crop&q=60&w=320",
       color: "from-yellow-500/60 via-yellow-900/40 to-[#0c0f1c]",
       borderGlow: "group-hover:border-yellow-500/40 group-hover:shadow-[0_0_20px_rgba(234,179,8,0.2)]",
       isPrimary: false
@@ -39,7 +39,7 @@ export default function ChannelCategories() {
     {
       id: "documentary",
       title: "Documentary",
-      image: "https://images.unsplash.com/photo-1478479405421-ce83c92fb3ba?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1478479405421-ce83c92fb3ba?auto=format&fit=crop&q=60&w=320",
       color: "from-emerald-600/60 via-emerald-900/40 to-[#0c0f1c]",
       borderGlow: "group-hover:border-emerald-500/40 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]",
       isPrimary: false
@@ -47,7 +47,7 @@ export default function ChannelCategories() {
     {
       id: "entertainment",
       title: "Entertainment",
-      image: "https://images.unsplash.com/photo-1603190287605-e6ade3cb4a00?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1603190287605-e6ade3cb4a00?auto=format&fit=crop&q=60&w=320",
       color: "from-pink-600/60 via-pink-900/40 to-[#0c0f1c]",
       borderGlow: "group-hover:border-pink-500/40 group-hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]",
       isPrimary: false

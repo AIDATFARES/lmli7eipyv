@@ -7,10 +7,8 @@ import { useState, useEffect, Fragment } from 'react';
 
 export default function HeroSection() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
     const targetDate = new Date('2026-06-11T12:00:00Z').getTime();
 
     const calculateTimeLeft = () => {
