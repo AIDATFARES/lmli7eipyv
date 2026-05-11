@@ -201,6 +201,7 @@ export default function HeroSection() {
                     alt="World Cup Stadium"
                     fill
                     priority
+                    unoptimized
                     quality={70}
                     sizes="(max-width: 768px) 100vw, 600px"
                     className="object-cover opacity-90 transition-transform duration-700 hover:scale-105"

@@ -7,8 +7,8 @@ import NoiseOverlay from "@/components/ui/NoiseOverlay";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
-const poppins = Poppins({ subsets: ["latin"], display: "swap", weight: ["400", "500", "600", "700"], variable: "--font-poppins" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-poppins" });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://worldcupiptv.us'),
