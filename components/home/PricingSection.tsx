@@ -122,13 +122,15 @@ export default function PricingSection() {
                 <button
                   key={dev.num}
                   onClick={() => setDevices(dev.num)}
+                  aria-label={`${dev.label} – ${dev.num} device${dev.num > 1 ? 's' : ''}`}
+                  aria-pressed={isActive}
                   className={`relative flex flex-col items-center justify-center w-[90px] h-[90px] sm:w-[110px] sm:h-[100px] rounded-xl transition-all duration-300 ${
                     isActive 
                       ? "bg-indigo-950/60 border border-purple-500/80 shadow-[0_0_30px_rgba(147,51,234,0.3)]" 
                       : "bg-[#0c0f1c]/80 border border-white/5 hover:border-white/20 hover:bg-[#111827]"
                   }`}
                 >
-                  <Icon className={`w-6 h-6 mb-2 ${isActive ? "text-purple-400" : "text-slate-400"}`} strokeWidth={1.5} />
+                  <Icon className={`w-6 h-6 mb-2 ${isActive ? "text-purple-400" : "text-slate-400"}`} strokeWidth={1.5} aria-hidden="true" />
                   <span className={`text-[10px] font-bold tracking-widest ${isActive ? "text-purple-300" : "text-slate-500"}`}>
                     {dev.label}
                   </span>

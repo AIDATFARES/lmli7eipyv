@@ -46,7 +46,8 @@ export default function Navbar() {
 
             <button
               onClick={() => setShowAnnouncement(false)}
-              className="absolute right-4 text-slate-500 hover:text-white transition-colors"
+              aria-label="Dismiss announcement"
+              className="absolute right-4 w-11 h-11 flex items-center justify-center text-slate-500 hover:text-white transition-colors"
             >
               <X size={14} />
             </button>
@@ -102,7 +103,13 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <button className="lg:hidden text-white ml-auto" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <button
+            className="lg:hidden text-white ml-auto w-11 h-11 flex items-center justify-center"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+          >
             {mobileMenuOpen ? <X /> : <Menu />}
           </button>
         </div>

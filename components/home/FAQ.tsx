@@ -63,12 +63,16 @@ export default function FAQ() {
             <div key={index} className="w-full">
               {/* ACCORDION ITEMS (CORE DESIGN) */}
               <button 
+                id={`faq-btn-${index}`}
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
                 className="w-full flex items-center gap-4 px-6 py-5 bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 rounded-xl transition-all duration-300 group cursor-pointer text-left"
               >
                 {/* Left Arrow Icon */}
                 <ChevronRight 
                   className={`w-5 h-5 text-white/50 transition-transform duration-300 ease-in-out ${openIndex === index ? 'rotate-90 text-white' : ''}`} 
+                  aria-hidden="true"
                 />
                 {/* Question Text */}
                 <span className="font-semibold text-white md:text-lg">{faq.question}</span>
@@ -78,6 +82,9 @@ export default function FAQ() {
               <AnimatePresence initial={false}>
                 {openIndex === index && (
                   <motion.div 
+                    id={`faq-answer-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-btn-${index}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -113,16 +120,24 @@ export default function FAQ() {
               </div>
               
               <div className="flex flex-col gap-3 w-full md:w-auto min-w-[240px]">
-                <button onClick={() => window.open('https://wa.me/213554246175', '_blank')} className="group relative overflow-hidden flex items-center justify-center gap-3 px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full font-bold text-[13px] tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]">
+                <button
+                  onClick={() => window.open('https://wa.me/213554246175', '_blank')}
+                  aria-label="Ask a question on WhatsApp (opens in new tab)"
+                  className="group relative overflow-hidden flex items-center justify-center gap-3 px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full font-bold text-[13px] tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]"
+                >
                   <div className="absolute inset-0 -translate-x-full group-hover:animate-shimmer bg-gradient-to-r from-transparent via-white/20 to-transparent z-0"></div>
-                  <MessageSquare className="w-5 h-5 fill-white text-white relative z-10 transition-transform duration-300 group-hover:scale-110" />
+                  <MessageSquare className="w-5 h-5 fill-white text-white relative z-10 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
                   <span className="relative z-10 transition-transform duration-300 group-hover:scale-105">ASK ON WHATSAPP</span>
                 </button>
-                <button className="group relative overflow-hidden flex items-center justify-center gap-3 px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-full font-bold text-[13px] tracking-widest transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
+                <a
+                  href="mailto:support@worldcupiptv.us"
+                  aria-label="Send an email to support"
+                  className="group relative overflow-hidden flex items-center justify-center gap-3 px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-full font-bold text-[13px] tracking-widest transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]"
+                >
                   <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
-                  <Mail className="w-5 h-5 text-white relative z-10 transition-transform duration-300 group-hover:scale-110" />
+                  <Mail className="w-5 h-5 text-white relative z-10 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
                   <span className="relative z-10 transition-transform duration-300 group-hover:scale-105">SEND EMAIL</span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
