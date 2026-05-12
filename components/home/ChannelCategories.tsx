@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -94,11 +95,12 @@ export default function ChannelCategories() {
             >
               {/* Background Image */}
               <div className="absolute inset-0 z-0 overflow-hidden">
-                <img 
+                <Image 
                   src={cat.image} 
                   alt={cat.title} 
-                  loading="lazy"
-                  className="w-full h-full object-cover opacity-30 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:opacity-50" 
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                  className="object-cover opacity-30 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:opacity-50" 
                 />
               </div>
 
@@ -121,3 +123,4 @@ export default function ChannelCategories() {
     </section>
   );
 }
+

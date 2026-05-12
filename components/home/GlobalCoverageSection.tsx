@@ -93,6 +93,7 @@ export default function GlobalCoverageSection() {
                 src={`https://flagcdn.com/w40/${country.code}.png`} 
                 alt={country.name} 
                 loading="lazy"
+                decoding="async"
                 width={16} height={12}
                 className="w-4 h-3 rounded-[2px] opacity-70"
               />
@@ -188,6 +189,7 @@ export default function GlobalCoverageSection() {
                   src={`https://flagcdn.com/w40/${country.code}.png`} 
                   alt={country.name} 
                   loading="lazy"
+                  decoding="async"
                   width={20} height={15}
                   className="w-5 h-auto rounded-[2px] opacity-90 group-hover:opacity-100 transition-opacity"
                 />
