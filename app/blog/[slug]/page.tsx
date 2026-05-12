@@ -18,20 +18,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const images = post.coverImage ? [post.coverImage] : [];
+
   return {
     title: `${post.title} | IPTV WorldCup Blog`,
     description: post.description,
     openGraph: {
       title: post.title,
       description: post.description,
-      images: [post.coverImage],
+      images: images,
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: [post.coverImage],
+      images: images,
     },
   };
 }
