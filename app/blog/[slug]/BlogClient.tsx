@@ -17,7 +17,7 @@ interface BlogClientProps {
     category: string;
     author: string;
     date: string;
-    coverImage: string;
+    coverImage?: string;
   };
 }
 
