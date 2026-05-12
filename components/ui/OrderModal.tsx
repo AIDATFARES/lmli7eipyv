@@ -60,19 +60,23 @@ export default function OrderModal({ isOpen, onClose, planName, devices, totalPr
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               className="w-full max-w-[380px] bg-[#0f1225] border border-purple-500/30 shadow-[0_0_50px_rgba(147,51,234,0.15)] rounded-2xl overflow-hidden pointer-events-auto max-h-[95vh] overflow-y-auto"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="order-modal-title"
             >
               {/* Header */}
               <div className="p-5 pb-3 relative">
                 <button 
                   onClick={onClose}
-                  className="absolute top-5 right-5 w-7 h-7 flex items-center justify-center bg-purple-500/20 text-purple-400 hover:bg-purple-500 hover:text-white rounded-lg transition-colors"
+                  aria-label="Close order modal"
+                  className="absolute top-5 right-5 w-11 h-11 flex items-center justify-center bg-purple-500/20 text-purple-400 hover:bg-purple-500 hover:text-white rounded-lg transition-colors"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-4 h-4" aria-hidden="true" />
                 </button>
-                <h3 className="text-xl font-black font-poppins text-white uppercase tracking-tight">
+                <h3 id="order-modal-title" className="text-xl font-black font-poppins text-white uppercase tracking-tight">
                   COMPLETE <span className="text-purple-400">YOUR ORDER</span>
                 </h3>
-                <p className="text-slate-400 text-[11px] mt-0.5">Fill in your details — activation is instant.</p>
+                <p className="text-slate-400 text-xs mt-0.5">Fill in your details — activation is instant.</p>
               </div>
 
               {/* Body */}
@@ -99,8 +103,9 @@ export default function OrderModal({ isOpen, onClose, planName, devices, totalPr
                 {/* Form */}
                 <div className="space-y-3">
                   <div>
-                    <label className="block text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Full Name</label>
+                    <label htmlFor="order-name" className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Full Name</label>
                     <input 
+                      id="order-name"
                       type="text" 
                       value={name}
                       onChange={(e) => setName(e.target.value)}
@@ -109,8 +114,9 @@ export default function OrderModal({ isOpen, onClose, planName, devices, totalPr
                     />
                   </div>
                   <div>
-                    <label className="block text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Email Address</label>
+                    <label htmlFor="order-email" className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Email Address</label>
                     <input 
+                      id="order-email"
                       type="email" 
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -119,37 +125,44 @@ export default function OrderModal({ isOpen, onClose, planName, devices, totalPr
                     />
                   </div>
                   
-                  {/* Payment Method */}
                   <div>
-                    <label className="block text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1.5">Payment Method</label>
-                    <div className="grid grid-cols-4 gap-2">
+                    <label className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1.5">Payment Method</label>
+                    <div className="grid grid-cols-4 gap-2" role="group" aria-label="Select payment method">
                       <button 
                         onClick={() => setPaymentMethod('paypal')}
+                        aria-pressed={paymentMethod === 'paypal'}
+                        aria-label="Pay with PayPal"
                         className={`flex flex-col items-center justify-center py-2.5 rounded-lg border transition-all ${paymentMethod === 'paypal' ? 'bg-purple-600/20 border-purple-500' : 'bg-[#151932] border-white/5 hover:border-white/20'}`}
                       >
-                        <span className={`font-black italic text-lg leading-none tracking-tighter ${paymentMethod === 'paypal' ? 'text-blue-400' : 'text-blue-500/70'}`}>P</span>
-                        <span className={`text-[9px] font-bold mt-1 ${paymentMethod === 'paypal' ? 'text-purple-300' : 'text-slate-500'}`}>PayPal</span>
+                        <span className={`font-black italic text-lg leading-none tracking-tighter ${paymentMethod === 'paypal' ? 'text-blue-400' : 'text-blue-500/70'}`} aria-hidden="true">P</span>
+                        <span className={`text-xs font-bold mt-1 ${paymentMethod === 'paypal' ? 'text-purple-300' : 'text-slate-400'}`}>PayPal</span>
                       </button>
                       <button 
                         onClick={() => setPaymentMethod('card')}
+                        aria-pressed={paymentMethod === 'card'}
+                        aria-label="Pay with Credit Card"
                         className={`flex flex-col items-center justify-center py-2.5 rounded-lg border transition-all ${paymentMethod === 'card' ? 'bg-purple-600/20 border-purple-500' : 'bg-[#151932] border-white/5 hover:border-white/20'}`}
                       >
-                        <CreditCard className={`w-5 h-5 ${paymentMethod === 'card' ? 'text-orange-400' : 'text-orange-400/70'}`} />
-                        <span className={`text-[9px] font-bold mt-1 ${paymentMethod === 'card' ? 'text-purple-300' : 'text-slate-500'}`}>Card</span>
+                        <CreditCard className={`w-5 h-5 ${paymentMethod === 'card' ? 'text-orange-400' : 'text-orange-400/70'}`} aria-hidden="true" />
+                        <span className={`text-xs font-bold mt-1 ${paymentMethod === 'card' ? 'text-purple-300' : 'text-slate-400'}`}>Card</span>
                       </button>
                       <button 
                         onClick={() => setPaymentMethod('crypto')}
+                        aria-pressed={paymentMethod === 'crypto'}
+                        aria-label="Pay with Crypto"
                         className={`flex flex-col items-center justify-center py-2.5 rounded-lg border transition-all ${paymentMethod === 'crypto' ? 'bg-purple-600/20 border-purple-500' : 'bg-[#151932] border-white/5 hover:border-white/20'}`}
                       >
-                        <span className={`font-serif font-bold text-lg leading-none ${paymentMethod === 'crypto' ? 'text-slate-300' : 'text-slate-500'}`}>₿</span>
-                        <span className={`text-[9px] font-bold mt-1 ${paymentMethod === 'crypto' ? 'text-purple-300' : 'text-slate-500'}`}>Crypto</span>
+                        <span className={`font-serif font-bold text-lg leading-none ${paymentMethod === 'crypto' ? 'text-slate-300' : 'text-slate-500'}`} aria-hidden="true">₿</span>
+                        <span className={`text-xs font-bold mt-1 ${paymentMethod === 'crypto' ? 'text-purple-300' : 'text-slate-400'}`}>Crypto</span>
                       </button>
                       <button 
                         onClick={() => setPaymentMethod('bank')}
+                        aria-pressed={paymentMethod === 'bank'}
+                        aria-label="Pay with Bank Transfer"
                         className={`flex flex-col items-center justify-center py-2.5 rounded-lg border transition-all ${paymentMethod === 'bank' ? 'bg-purple-600/20 border-purple-500' : 'bg-[#151932] border-white/5 hover:border-white/20'}`}
                       >
-                        <Building className={`w-5 h-5 ${paymentMethod === 'bank' ? 'text-slate-300' : 'text-slate-500'}`} />
-                        <span className={`text-[9px] font-bold mt-1 ${paymentMethod === 'bank' ? 'text-purple-300' : 'text-slate-500'}`}>Bank</span>
+                        <Building className={`w-5 h-5 ${paymentMethod === 'bank' ? 'text-slate-300' : 'text-slate-500'}`} aria-hidden="true" />
+                        <span className={`text-xs font-bold mt-1 ${paymentMethod === 'bank' ? 'text-purple-300' : 'text-slate-400'}`}>Bank</span>
                       </button>
                     </div>
                   </div>

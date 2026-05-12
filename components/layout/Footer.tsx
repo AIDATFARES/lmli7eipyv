@@ -37,15 +37,15 @@ export default function Footer() {
           
           {/* Brand Section */}
           <div className="lg:col-span-4">
-            <Link href="/" className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center shadow-[0_0_20px_rgba(147,51,234,0.3)]">
+            <Link href="/" aria-label="IPTV WorldCup – Go to homepage" className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center shadow-[0_0_20px_rgba(147,51,234,0.3)]" aria-hidden="true">
                 <Tv className="text-white w-7 h-7" />
               </div>
               <div>
-                <h3 className="font-poppins font-black text-2xl tracking-tighter text-white leading-none">
+                <p className="font-poppins font-black text-2xl tracking-tighter text-white leading-none">
                   IPTV WorldCup
-                </h3>
-                <span className="text-[10px] font-bold tracking-[0.2em] text-purple-400 uppercase">
+                </p>
+                <span className="text-xs font-bold tracking-[0.2em] text-purple-400 uppercase">
                   World Cup 2026
                 </span>
               </div>
@@ -86,10 +86,10 @@ export default function Footer() {
             
             {/* Column 1: Navigation */}
             <div>
-              <h4 className="text-[11px] font-black text-slate-500 uppercase tracking-[0.2em] mb-8 relative inline-block">
+              <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-8 relative inline-block">
                 Navigation
                 <div className="absolute -bottom-1 left-0 w-8 h-[2px] bg-purple-500"></div>
-              </h4>
+              </h3>
               <ul className="space-y-4">
                 <li><Link href="/" className="group flex items-center gap-3 text-slate-400 hover:text-white transition-colors text-sm font-bold"><Home className="w-4 h-4 text-orange-400 group-hover:scale-110 transition-transform" /> Home</Link></li>
                 <li><Link href="/pricing" className="group flex items-center gap-3 text-slate-400 hover:text-white transition-colors text-sm font-bold"><DollarSign className="w-4 h-4 text-yellow-400 group-hover:scale-110 transition-transform" /> Pricing</Link></li>
@@ -102,10 +102,10 @@ export default function Footer() {
 
             {/* Column 2: Service */}
             <div>
-              <h4 className="text-[11px] font-black text-slate-500 uppercase tracking-[0.2em] mb-8 relative inline-block">
+              <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-8 relative inline-block">
                 Service
                 <div className="absolute -bottom-1 left-0 w-8 h-[2px] bg-purple-500"></div>
-              </h4>
+              </h3>
               <ul className="space-y-4">
                 <li><Link href="/#pricing" className="group flex items-center gap-3 text-slate-400 hover:text-white transition-colors text-sm font-bold"><Trophy className="w-4 h-4 text-yellow-500 group-hover:scale-110 transition-transform" /> Get Started</Link></li>
                 <li><Link href="https://wa.me/213554246175" target="_blank" className="group flex items-center gap-3 text-slate-400 hover:text-white transition-colors text-sm font-bold"><MessageCircle className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" /> WhatsApp Support</Link></li>
@@ -117,10 +117,10 @@ export default function Footer() {
 
             {/* Column 3: Legal */}
             <div>
-              <h4 className="text-[11px] font-black text-slate-500 uppercase tracking-[0.2em] mb-8 relative inline-block">
+              <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-8 relative inline-block">
                 Legal
                 <div className="absolute -bottom-1 left-0 w-8 h-[2px] bg-purple-500"></div>
-              </h4>
+              </h3>
               <ul className="space-y-4">
                 <li><Link href="/privacy" className="group flex items-center gap-3 text-slate-400 hover:text-white transition-colors text-sm font-bold"><Lock className="w-4 h-4 text-yellow-500 group-hover:scale-110 transition-transform" /> Privacy Policy</Link></li>
                 <li><Link href="/refunds" className="group flex items-center gap-3 text-slate-400 hover:text-white transition-colors text-sm font-bold"><Play className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" /> Refund Policy</Link></li>
@@ -132,10 +132,10 @@ export default function Footer() {
 
             {/* Column 4: Payment */}
             <div>
-              <h4 className="text-[11px] font-black text-slate-500 uppercase tracking-[0.2em] mb-8 relative inline-block">
+              <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-8 relative inline-block">
                 Payment
                 <div className="absolute -bottom-1 left-0 w-8 h-[2px] bg-purple-500"></div>
-              </h4>
+              </h3>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-slate-400 text-sm font-bold"><div className="w-4 h-4 bg-blue-600 rounded flex items-center justify-center text-[10px] text-white">P</div> PayPal</li>
                 <li className="flex items-center gap-3 text-slate-400 text-sm font-bold"><CreditCard className="w-4 h-4 text-orange-400" /> Credit Card</li>
