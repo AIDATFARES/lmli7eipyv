@@ -10,6 +10,35 @@ import {
 import AnimatedBackground from "@/components/ui/AnimatedBackground";
 import Link from 'next/link';
 
+interface BlogClientProps {
+  post: {
+    title: string;
+    content: string;
+    category: string;
+    author: string;
+    date: string;
+    coverImage: string;
+  };
+}
+
+interface ContentItem {
+  type: 'paragraph' | 'image' | 'table' | 'faq' | 'subtitle' | 'list-item' | 'step-item' | 'button' | 'toc';
+  text?: string;
+  src?: string;
+  alt?: string;
+  caption?: string;
+  data?: string[][];
+  question?: string;
+  answer?: string;
+  href?: string;
+}
+
+interface ContentSection {
+  type: 'intro' | 'section';
+  title?: string;
+  items: ContentItem[];
+}
+
 // --- Custom Components for Premium UI ---
 
 const GlassCard = ({ children, className = "", delay = 0 }: { children: React.ReactNode, className?: string, delay?: number }) => (
@@ -103,7 +132,7 @@ const parseMarkdown = (text: string) => {
   if (!text) return null;
   const parts = text.split(/(\*\*.*?\*\*|\[.*?\]\(.*?\))/g);
 
-  return parts.map((part, i) => {
+  return parts.map((part: string, i: number) => {
     if (part.startsWith('**') && part.endsWith('**')) {
       return <strong key={i} className="text-white font-bold">{part.slice(2, -2)}</strong>;
     }
@@ -123,16 +152,16 @@ const parseMarkdown = (text: string) => {
   });
 };
 
-export default function BlogClient({ post }: { post: any }) {
+export default function BlogClient({ post }: BlogClientProps) {
   // Parse content into logical sections for the premium renderer
   const lines = post.content.split('\n');
-  const sections: any[] = [];
-  let currentSection: any = { type: 'intro', items: [] };
+  const sections: ContentSection[] = [];
+  let currentSection: ContentSection = { type: 'intro', items: [] };
   let currentTable: string[][] = [];
 
-  lines.forEach((line) => {
+  lines.forEach((line: string) => {
     if (line.startsWith('|')) {
-      const row = line.split('|').filter(c => c.trim() !== '' || line.includes('||')).map(c => c.trim());
+      const row = line.split('|').filter((c: string) => c.trim() !== '' || line.includes('||')).map((c: string) => c.trim());
       if (row.length > 0 && !line.includes('---')) {
         currentTable.push(row);
       }
@@ -249,16 +278,16 @@ export default function BlogClient({ post }: { post: any }) {
             if (section.type === 'intro') {
               return (
                 <div key={idx} className="mb-16">
-                  {section.items.map((item: any, i: number) => {
+                  {section.items.map((item: ContentItem, i: number) => {
                     if (item.type === 'paragraph') return <p key={i} className="text-lg text-slate-400 mb-8 leading-relaxed">{item.text}</p>;
-                    if (item.type === 'image') return <PremiumImage key={i} src={item.src} alt={item.alt} caption={item.caption} />;
+                    if (item.type === 'image' && item.src && item.alt) return <PremiumImage key={i} src={item.src} alt={item.alt} caption={item.caption} />;
                     if (item.type === 'toc') return (
                       <div key={i} className="bg-slate-900/50 border border-white/10 rounded-2xl p-6 mb-12">
                         <h3 className="text-xl font-bold mb-4 text-white">Table of Contents</h3>
                         <ul className="space-y-3">
-                          {sections.filter(s => s.title).map((s, idx) => (
+                          {sections.filter((s: ContentSection) => s.title).map((s: ContentSection, idx: number) => (
                             <li key={idx}>
-                              <Link href={`#${s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className="text-primary hover:text-primary/80 transition-colors font-medium text-sm flex items-center gap-3">
+                              <Link href={`#${s.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className="text-primary hover:text-primary/80 transition-colors font-medium text-sm flex items-center gap-3">
                                 <div className="w-1.5 h-1.5 rounded-full bg-primary/50" />
                                 {s.title}
                               </Link>
@@ -273,12 +302,12 @@ export default function BlogClient({ post }: { post: any }) {
               );
             }
 
-            const listItems = section.items.filter((it: any) => it.type === 'list-item');
+            const listItems = section.items.filter((it: ContentItem) => it.type === 'list-item');
             const avgLength = listItems.length > 0
-              ? listItems.reduce((sum: number, it: any) => sum + it.text.length, 0) / listItems.length
+              ? listItems.reduce((sum: number, it: ContentItem) => sum + (it.text?.length || 0), 0) / listItems.length
               : 0;
             const isFeatures = listItems.length >= 3 && avgLength < 100;
-            const isSteps = section.items.filter((it: any) => it.type === 'step-item').length >= 3;
+            const isSteps = section.items.filter((it: ContentItem) => it.type === 'step-item').length >= 3;
 
             return (
               <div key={idx} className="mb-20">
@@ -291,19 +320,19 @@ export default function BlogClient({ post }: { post: any }) {
 
                 {isSteps ? (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {section.items.filter((it: any) => it.type === 'step-item').map((item: any, i: number) => (
+                    {section.items.filter((it: ContentItem) => it.type === 'step-item').map((item: ContentItem, i: number) => (
                       <StepCard
                         key={i}
                         number={(i + 1).toString()}
-                        title={item.text.split(':')[0].replace(/^\d\.\s*/, '')}
-                        text={item.text.split(':')[1] || ""}
+                        title={item.text?.split(':')[0].replace(/^\d\.\s*/, '') || ""}
+                        text={item.text?.split(':')[1] || ""}
                         delay={i * 0.1}
                       />
                     ))}
                   </div>
                 ) : isFeatures ? (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {section.items.map((item: any, i: number) => {
+                    {section.items.map((item: ContentItem, i: number) => {
                       if (item.type === 'list-item') {
                         return (
                           <GlassCard key={i} delay={i * 0.05} className="flex flex-col h-full p-6">
@@ -311,10 +340,10 @@ export default function BlogClient({ post }: { post: any }) {
                               <CheckCircle2 className="w-5 h-5" />
                             </div>
                             <h4 className="text-lg font-bold mb-4 text-white">
-                              {item.text.includes(':') ? item.text.split(':')[0] : item.text}
+                              {item.text?.includes(':') ? item.text.split(':')[0] : item.text}
                             </h4>
                             <p className="text-slate-400 text-sm leading-relaxed">
-                              {parseMarkdown(item.text.includes(':') ? item.text.split(':')[1] : "")}
+                              {parseMarkdown(item.text?.includes(':') ? item.text.split(':')[1] : "")}
                             </p>
                           </GlassCard>
                         );
@@ -324,19 +353,19 @@ export default function BlogClient({ post }: { post: any }) {
                   </div>
                 ) : (
                   <div className="space-y-8">
-                    {section.items.map((item: any, i: number) => {
-                      if (item.type === 'paragraph') return <div key={i} className="text-lg text-slate-400 mb-8 leading-relaxed">{parseMarkdown(item.text)}</div>;
-                      if (item.type === 'image') return <PremiumImage key={i} src={item.src} alt={item.alt} caption={item.caption} />;
-                      if (item.type === 'table') return <ComparisonTable key={i} data={item.data} />;
-                      if (item.type === 'faq') return <FAQItem key={i} question={item.question} answer={item.answer} />;
-                      if (item.type === 'subtitle') return <h3 key={i} className="text-2xl font-bold mt-12 mb-6 text-white">{item.text}</h3>;
+                    {section.items.map((item: ContentItem, i: number) => {
+                      if (item.type === 'paragraph' && item.text) return <div key={i} className="text-lg text-slate-400 mb-8 leading-relaxed">{parseMarkdown(item.text)}</div>;
+                      if (item.type === 'image' && item.src && item.alt) return <PremiumImage key={i} src={item.src} alt={item.alt} caption={item.caption} />;
+                      if (item.type === 'table' && item.data) return <ComparisonTable key={i} data={item.data} />;
+                      if (item.type === 'faq' && item.question && item.answer) return <FAQItem key={i} question={item.question} answer={item.answer} />;
+                      if (item.type === 'subtitle' && item.text) return <h3 key={i} className="text-2xl font-bold mt-12 mb-6 text-white">{item.text}</h3>;
                       if (item.type === 'list-item') return (
                         <div key={i} className="flex gap-4 mb-4 items-start">
                           <div className="mt-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /></div>
                           <p className="text-slate-400">{item.text}</p>
                         </div>
                       );
-                      if (item.type === 'button') return (
+                      if (item.type === 'button' && item.href && item.text) return (
                         <Link key={i} href={item.href} className="inline-flex items-center justify-center px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl transition-all hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.3)] mb-8 mr-4 tracking-widest text-[13px]">
                           {item.text}
                         </Link>
