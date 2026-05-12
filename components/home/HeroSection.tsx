@@ -32,8 +32,8 @@ export default function HeroSection() {
             <h1
               className="text-5xl md:text-6xl lg:text-7xl font-bold font-poppins tracking-tight leading-[1.1]"
             >
-              <span className="text-white block">THE WORLD CUP</span>
-              <span className="bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-400 text-transparent bg-clip-text block mt-1">ON YOUR SCREEN</span>
+              <span className="text-white block">PREMIUM 4K IPTV</span>
+              <span className="bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-400 text-transparent bg-clip-text block mt-1 uppercase">World Cup 2026</span>
             </h1>
 
             <p

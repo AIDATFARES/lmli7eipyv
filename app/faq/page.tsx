@@ -150,6 +150,9 @@ export default function FAQPage() {
       <div className="container mx-auto max-w-6xl">
         {/* Header Section */}
         <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-6xl font-black font-poppins text-white mb-6 tracking-tight uppercase">
+            Frequently Asked <span className="text-primary">Questions</span>
+          </h1>
           <p className="text-slate-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
             Got a question? We have answered everything below. If you still need help, 
             our team is on <span className="text-emerald-400 font-semibold">WhatsApp 24/7</span> and replies in minutes.

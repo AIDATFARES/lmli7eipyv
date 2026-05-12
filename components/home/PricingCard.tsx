@@ -41,7 +41,7 @@ const PricingCard = memo(({ plan, totalPrice, monthlyPrice, devices, features, o
             <Zap className="w-3 h-3 mr-1" fill="currentColor" /> MOST REQUESTED
           </div>
         ) : (
-          <div className="text-[10px] font-bold tracking-widest text-slate-500">{plan.name}</div>
+          <h3 className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">{plan.name}</h3>
         )}
 
         {plan.saveTag && (
@@ -52,7 +52,7 @@ const PricingCard = memo(({ plan, totalPrice, monthlyPrice, devices, features, o
       </div>
 
       {/* Price Display */}
-      {plan.popular && <div className="text-[10px] font-bold tracking-widest text-slate-500 mb-2">{plan.name}</div>}
+      {plan.popular && <h3 className="text-[10px] font-bold tracking-widest text-slate-500 mb-2 uppercase">{plan.name}</h3>}
       
       <div className="mb-4">
         <div className="flex items-start text-white mb-2 tabular-nums">

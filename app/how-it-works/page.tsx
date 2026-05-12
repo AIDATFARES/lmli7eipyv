@@ -164,7 +164,7 @@ export default function HowItWorksPage() {
                 <div className="w-12 h-12 rounded-xl bg-indigo-900/30 border border-indigo-500/20 flex items-center justify-center mb-6">
                   <device.icon className="w-6 h-6 text-indigo-400" />
                 </div>
-                <h4 className="text-white font-bold mb-3">{device.name}</h4>
+                <h3 className="text-white font-bold mb-3">{device.name}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">{device.desc}</p>
               </motion.div>
             ))}
@@ -186,7 +186,7 @@ export default function HowItWorksPage() {
                 <Wifi className="w-6 h-6 text-blue-400" />
               </div>
               <div>
-                <h4 className="text-white font-bold mb-2 text-lg">Use a Wired Connection</h4>
+                <h3 className="text-white font-bold mb-2 text-lg">Use a Wired Connection</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">For 4K Ultra HD streaming, we always recommend using an Ethernet cable rather than Wi-Fi to eliminate interference and buffering.</p>
               </div>
             </div>
@@ -195,7 +195,7 @@ export default function HowItWorksPage() {
                 <Shield className="w-6 h-6 text-purple-400" />
               </div>
               <div>
-                <h4 className="text-white font-bold mb-2 text-lg">VPN Recommendations</h4>
+                <h3 className="text-white font-bold mb-2 text-lg">VPN Recommendations</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">If your ISP throttles your streaming speed, using a premium VPN can help you maintain consistent 4K bitrates during high-traffic match days.</p>
               </div>
             </div>
@@ -204,7 +204,7 @@ export default function HowItWorksPage() {
                 <Cpu className="w-6 h-6 text-emerald-400" />
               </div>
               <div>
-                <h4 className="text-white font-bold mb-2 text-lg">Hardware Power</h4>
+                <h3 className="text-white font-bold mb-2 text-lg">Hardware Power</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">The Amazon Firestick 4K Max remains our top recommendation for the most fluid UI and fastest channel loading speeds.</p>
               </div>
             </div>
